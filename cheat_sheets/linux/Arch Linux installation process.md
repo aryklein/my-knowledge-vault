@@ -530,3 +530,5 @@ account    include      system-local-login
 session    include      system-local-login
 session    optional     pam_gnome_keyring.so auto_start
 ```
+
+#archlinux #linux 

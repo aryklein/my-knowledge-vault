@@ -1,3 +1,5 @@
+# How to set up a Yubikey in Arch Linux
+
 Yubikey is a hardware authentication device that can be used for two-factor authentication,
 passwordless login, and other security features. This document shows how to set up a Yubikey
 in Arch Linux.
