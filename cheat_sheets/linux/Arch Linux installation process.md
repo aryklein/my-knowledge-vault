@@ -412,7 +412,7 @@ doas pacman -S sway \
     kubectl \
     gimp \
     obs-studio \
-    youtube-dl \
+    yt-dlp \
     github-cli \
     mpv \
     android-udev \
