@@ -1,7 +1,5 @@
 ---
-title: "How to submit a PKGBUILD to the AUR"
-date: 2023-02-04T01:00:00-03:00
-draft: false
+tags: linux, archlinux
 ---
 
 # How to submit a PKGBUILD to the AUR
