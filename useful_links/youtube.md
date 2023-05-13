@@ -1,9 +1,11 @@
 ---
 tags: youtube, tutorial
 ---
+
 # Useful YouTube links
 
-Below is a compilation of valuable videos I found on YouTube, which helped me gain a better understanding of various topics.
+Below is a compilation of valuable videos I found on YouTube, which helped me
+gain a better understanding of various topics.
 
 ## Coding
 
