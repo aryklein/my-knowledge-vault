@@ -30,6 +30,13 @@ highlighting the lines you want to modify and executing the following command:
 gq
 ```
 
+To reformat the entire file without highlighting all the lines, you can execute
+the following command:
+
+```
+gggqG
+```
+
 If you want to ensure that already present line breaks are not modified during
 the reformatting process, you need to add the `w` option to the `formatoptions`
 setting:
@@ -40,3 +47,21 @@ setting:
 
 By adding the `w` option to `formatoptions`, Neovim will intelligently split
 long lines at word boundaries while preserving existing line breaks.
+
+In my case I applied these options to the Markdown files in the Neovim
+configuration files:
+
+```lua
+-- Add colorcolumn to MD files
+vim.cmd([[autocmd FileType markdown setlocal colorcolumn=80 formatoptions+=w textwidth=80]])
+```
+
+## Changing the case
+
+Visual select the text, then `U` for uppercase or `u` for lowercase. To swap all
+casing in a visual selection, press `~` (tilde).
+
+Without using a visual selection, `gU<motion>` will make the characters in
+motion uppercase, or use `gu<motion>` for lowercase.
+
+For more details, check this table [[neovim_case_commands]]
