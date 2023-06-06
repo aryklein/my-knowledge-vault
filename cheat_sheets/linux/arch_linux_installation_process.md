@@ -412,23 +412,25 @@ doas ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 5) Reboot.
 
-### Installing Sway and other useful packages
+### Installing Hyprland and other useful packages
 
 Sway is a tiling Wayland compositor.
 
 Install the following non-AUR packages:
 
 ```bash
-doas pacman -S sway \
+doas pacman -S hyprland \
+    # sway \
     fuzzel \
     waybar \
     blueberry \
     xdg-desktop-portal \
-    xdg-desktop-portal-wlr \
+    # xdg-desktop-portal-wlr \
+    xdg-desktop-portal-hyprland \
     khal \
-    kanshi \
+    polkit-gnome \
+    # kanshi \
     pavucontrol \
-    foot \
     swaylock \
     light \
     alacritty \
@@ -478,11 +480,10 @@ doas pacman -S sway \
     libappindicator-gtk3 \
     gtk4 \
     go \
-    pyright \
     xorg-xwayland \
     gnome-themes-extra \
     aws-cli-v2 \
-    zsa-wally \
+    # zsa-wally \
     swappy \
     kubectl \
     helmfile \
@@ -516,7 +517,7 @@ paru -S visual-studio-code-bin \
     nautilus-dropbox \
     teamviewer \
 	zoom \
-	slack-electron \
+	slack-desktop \
 	spotify \
 	tfswitch-bin \
 	wob \

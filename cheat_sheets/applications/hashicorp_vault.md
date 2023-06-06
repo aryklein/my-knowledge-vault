@@ -55,3 +55,20 @@ get and vault put commands.
 SECRET=$(vault kv get -format=json secret/orig | jq -r '.data.data')
 echo $SECRET | vault kv secret/dest put -
 ```
+
+## Modify a secret
+
+If you want to modify a specific field of a secret in HashiCorp Vault's Key-Value (KV) secrets engine, it's important to know that the vault `kv put` command will overwrite the existing secret at the specified path. **This means if you only specify the field you want to change, all other fields in the secret will be lost.**
+
+So to modify a specific field, you should first read the current secret, update the specific field, and then write the entire secret back.
+
+```bash
+# Read the original secret
+original_secret=$(vault kv get -format=json secret/my_secret | jq -r '.data.data')
+
+# Update the specific field (replace "my_field" and "new_value" with your field and value)
+updated_secret=$(echo $original_secret | jq '.my_field = "new_value"')
+
+# Write the updated secret back
+echo $updated_secret | vault kv put secret/my_secret -
+```
