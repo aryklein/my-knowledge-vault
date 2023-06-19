@@ -90,3 +90,17 @@ This shows how much disk space the journal logs are consuming.
 ```sh
 journalctl --disk-usage
 ```
+
+### Vacuum Journal
+
+This command will delete the oldest logs until the disk usage reaches the specified size.
+
+```sh
+sudo journalctl --vacuum-size=500M
+```
+
+or by days:
+
+```sh
+sudo journalctl --vacuum-time=1d
+```
