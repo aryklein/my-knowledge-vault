@@ -53,7 +53,7 @@ get and vault put commands.
 
 ```sh
 SECRET=$(vault kv get -format=json secret/orig | jq -r '.data.data')
-echo $SECRET | vault kv secret/dest put -
+echo $SECRET | vault kv put secret/dest -
 ```
 
 ## Modify a secret

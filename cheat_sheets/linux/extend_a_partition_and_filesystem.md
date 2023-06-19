@@ -1,5 +1,5 @@
 ---
-tags: linux
+tags: linux, partition, filesystem
 ---
 
 # How to extend the last partition and filesystem
