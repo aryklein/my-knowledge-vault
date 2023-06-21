@@ -79,8 +79,8 @@ AWK has some built-in variables that you can use:
 Here's an example that uses some built-in variables:
 
 ```bash
-awk '{ print NR, $1, NF }' filename
+awk '{ print NR, $0, NF }' filename
 ```
 
-This command will print the line number, the first field, and the number of
+This command will print the line number, the entire line, and the number of
 fields in each line.
