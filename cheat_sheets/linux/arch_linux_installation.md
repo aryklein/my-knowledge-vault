@@ -13,7 +13,8 @@ Download the latest ISO from [here](https://archlinux.org/download/) and create
 a bootable USB drive using the command provided below:
 
 ```bash
-sudo dd bs=4M if=archlinux-<release_date>-x86_64.iso of=/dev/<usbdrive> status=progress oflag=sync
+sudo dd bs=4M if=archlinux-<release_date>-x86_64.iso of=/dev/<usbdrive>
+status=progress oflag=sync
 ```
 
 Replace `release_date` with the proper relase date and `usbdrive` with the
@@ -105,7 +106,8 @@ speeds, edit this list by moving geographically closer mirrors to the top.
 In my case I use:
 
 ```bash
-reflector -c 'United States' -c Canada --latest 5 --protocol https --save /etc/pacman.d/mirrorlist
+reflector -c 'United States' -c Canada --latest 5 --protocol https --save
+/etc/pacman.d/mirrorlist
 ```
 
 Use the `pacstrap` script to install the base package with the following
@@ -223,7 +225,7 @@ packages:
 ```bash
 pacman -S openssh \
     polkit \
-	networkmanager
+    networkmanager
 systemctl enable NetworkManager
 ```
 
@@ -313,7 +315,8 @@ pacman -S intel-ucode \
     ansible-lint \
     sysstat \
     nmap \
-    freerdp
+    freerdp \
+    util-linux
 ```
 
 ### Mirror List
@@ -323,7 +326,8 @@ online [generator](https://www.archlinux.org/mirrorlist/) or the `reflector`
 command:
 
 ```bash
-doas reflector -c 'United States' -c Canada --latest 5 --protocol https --save /etc/pacman.d/mirrorlist
+doas reflector -c 'United States' -c Canada --latest 5 --protocol https --save
+/etc/pacman.d/mirrorlist
 doas pacman -Syu
 ```
 
@@ -357,6 +361,18 @@ after boot. To address this issue, you can modify the `/etc/bluetooth/main.conf`
 file and set `AutoEnable=true` in the `[Policy]` section. This configuration
 change ensures that the Bluetooth adapter is enabled during startup, resolving
 any related problems you may encounter.
+
+### Enable solid state drive periodic trim
+
+The `util-linux` package provides `fstrim.service` and `fstrim.timer` systemd
+unit files. Enabling the timer will activate the service weekly:
+
+```bash
+doas systemctl enable fstrim.timer
+doas systemctl start fstrim.timer
+```
+
+More info [here](https://wiki.archlinux.org/title/Solid_state_drive)
 
 ### Colorized files
 
@@ -396,7 +412,8 @@ outlined below:
 systemctl enable systemd-resolved.service
 ```
 
-3) Create the file `/etc/NetworkManager/conf.d/dns.conf` with the following line:
+3) Create the file `/etc/NetworkManager/conf.d/dns.conf` with the following
+line:
 
 ```bash
 [main]
@@ -414,22 +431,19 @@ doas ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 ### Installing Hyprland and other useful packages
 
-Sway is a tiling Wayland compositor.
+Hyprland is a tiling Wayland compositor.
 
 Install the following non-AUR packages:
 
 ```bash
 doas pacman -S hyprland \
-    # sway \
     fuzzel \
     waybar \
     blueberry \
     xdg-desktop-portal \
-    # xdg-desktop-portal-wlr \
     xdg-desktop-portal-hyprland \
     khal \
     polkit-gnome \
-    # kanshi \
     pavucontrol \
     swaylock \
     light \
@@ -483,7 +497,6 @@ doas pacman -S hyprland \
     xorg-xwayland \
     gnome-themes-extra \
     aws-cli-v2 \
-    # zsa-wally \
     swappy \
     kubectl \
     helmfile \
@@ -502,9 +515,11 @@ To install the following AUR packages, execute the following command:
 # for Dropbox
 gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
 # for spotify
-curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
+curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg
+--import -
 # for wob
-gpg --keyserver keys.openpgp.org --receive-keys 5C6DA024DDE27178073EA103F4B432D5D67990E3
+gpg --keyserver keys.openpgp.org --receive-keys
+5C6DA024DDE27178073EA103F4B432D5D67990E3
 ```
 
 **_Note_**: check these PGP keys before, as they might have been changed.
@@ -516,13 +531,14 @@ paru -S visual-studio-code-bin \
     dropbox \
     nautilus-dropbox \
     teamviewer \
-	zoom \
-	slack-desktop \
-	spotify \
-	tfswitch-bin \
-	wob \
-	helm-diff \
-	appimagelauncher
+    zoom \
+    slack-desktop \
+    spotify \
+    tfswitch-bin \
+    wob \
+    helm-diff \
+    appimagelauncher \
+    zsa-wally-bin
 ```
 
 ## Hardware video acceleration
@@ -547,7 +563,8 @@ More info [here](https://wiki.archlinux.org/title/Hardware_video_acceleration)
 
 Pipewire is a modern low-level multimedia framework designed to provide minimal
 latency and support for various audio and video applications, including
-PulseAudio, JACK, ALSA, and GStreamer. It serves as a replacement for PulseAudio.
+PulseAudio, JACK, ALSA, and GStreamer. It serves as a replacement for
+PulseAudio.
 
 To verify if your system is utilizing Pipewire, you can execute the following
 command:
@@ -556,7 +573,8 @@ command:
 $ pactl info
 ```
 
-If the output of the command states `Server Name: PulseAudio (on PipeWire 0.3.32)`,
+If the output of the command states `Server Name: PulseAudio (on PipeWire
+0.3.32)`,
 it indicates that Pipewire is already installed and running on your system.
 
 Execute `systemctl status --user pipewire-pulse.service` to see the result.
