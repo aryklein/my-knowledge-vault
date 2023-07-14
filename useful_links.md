@@ -23,3 +23,7 @@ gain a better understanding of various topics.
 ## Useful Articles
 
 - [Debug Kubernetes Pods Using Ephemeral Container](https://medium.com/linux-shots/debug-kubernetes-pods-using-ephemeral-container-f01378243ff)
+
+## 3D Printer
+
+- [Ender 3 V2 Neo Assembly & Tutorial Video](https://www.youtube.com/watch?v=dErZygToGsw)
