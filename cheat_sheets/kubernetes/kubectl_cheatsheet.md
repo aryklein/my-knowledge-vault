@@ -8,6 +8,13 @@ Personal reference guide that provides a memo of commonly used commands and
 shortcuts for the Kubernetes command-line tool, `kubectl`.
 
 ---
+## Force pod deletion 
+
+You can use following command to delete a pod forcefully:
+
+```bash
+kubectl delete pod <pod_name> --grace-period=0 --force --namespace <namespace>
+```
 
 ## Scale deployments manually
 
