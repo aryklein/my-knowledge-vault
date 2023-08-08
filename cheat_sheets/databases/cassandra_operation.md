@@ -1,3 +1,7 @@
+---
+tags: database, cheatsheet
+---
+
 # Cassandra basic operation cheat sheet
 
 ## Nodetool basics
