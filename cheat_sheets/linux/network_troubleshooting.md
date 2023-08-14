@@ -20,3 +20,9 @@ network connections
 ```bash
 ss -tuln
 ```
+
+## Display only network interfaces with IPv4 address assigned
+
+```bash
+ip -4 -brief ad ls
+```
