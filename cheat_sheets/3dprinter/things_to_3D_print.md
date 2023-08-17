@@ -19,3 +19,6 @@ Desk accessories:
 Others:
 - [Carabiner1](https://www.thingiverse.com/thing:1819242)
 - [Carabiner2](https://www.thingiverse.com/thing:1008943)
+
+Cable organizer:
+- [USB Cable Holder](https://www.thingiverse.com/thing:3022893)
