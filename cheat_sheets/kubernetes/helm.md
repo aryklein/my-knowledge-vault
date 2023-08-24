@@ -33,6 +33,11 @@ helm repo remove [repo-name]
 helm search repo [chart-name]
 ```
 
+If you pass the option `--version`, it will show all available versions
+```bash
+helm search repo [chart-name] --versions
+```
+
 **Install a chart:**
 ```bash
 helm install [release-name] [repo-name]/[chart-name]

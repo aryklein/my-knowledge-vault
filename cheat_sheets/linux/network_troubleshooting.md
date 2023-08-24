@@ -26,3 +26,9 @@ ss -tuln
 ```bash
 ip -4 -brief ad ls
 ```
+
+## Display bandwidth usage on an interface by host
+
+```bash
+sudo iftop [-i interface]
+```
