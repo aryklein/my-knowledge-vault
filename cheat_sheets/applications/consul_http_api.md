@@ -49,7 +49,7 @@ http://<consul_node_ip>:8500/v1/agent/service/deregister/prometheus-main-id
 You can find the `consul_node_ip` with: 
 
 ```bash
-curl -X GET http://consul.service.consul_dc>.consul:8500/v1/catalog/service/<service_name> | jq
+curl -X GET \ http://consul.service.consul_dc>.consul:8500/v1/catalog/service/<service_name> | jq
 ```
 
 ## Remove a node from Consul
