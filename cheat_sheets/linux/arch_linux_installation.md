@@ -500,7 +500,8 @@ doas pacman -S hyprland \
     swappy \
     kubectl \
     helmfile \
-    transmission-gtk
+    transmission-gtk \
+    audacity
 ```
 
 To manage screen brightness, please add your user to the video group:
