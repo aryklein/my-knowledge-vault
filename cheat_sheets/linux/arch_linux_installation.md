@@ -300,7 +300,7 @@ pacman -S intel-ucode \
     ripgrep \
     stow \
     bat \
-    exa \
+    eza \
     usbutils \
     mtpfs \
     bluez \
