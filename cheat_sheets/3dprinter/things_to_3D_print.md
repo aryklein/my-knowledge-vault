@@ -15,6 +15,7 @@ Camera accessories:
 
 Desk accessories:
 - [Headset Hanger](https://www.thingiverse.com/thing:5773282)
+- [Laptop stand](https://www.thingiverse.com/thing:4646962)
 
 Others:
 - [Carabiner1](https://www.thingiverse.com/thing:1819242)
