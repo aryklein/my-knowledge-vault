@@ -95,5 +95,5 @@ xfs_growfs -d /mount-point
 ```
 
 The option `-d` in `xfs_growfs` is to increase the size of the file system to
-the maximum size that the underlying device supports. Othwerwise you should use
+the maximum size that the underlying device supports. Otherwise you should use
 `-D <size>`
