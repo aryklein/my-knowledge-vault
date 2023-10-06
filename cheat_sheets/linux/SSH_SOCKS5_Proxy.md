@@ -1,3 +1,9 @@
+---
+tags:
+  - cheatsheet
+  - linux
+---
+
 # SSH SOCKS5 Proxy
 
 You can set up a SOCKS5 proxy with SSH in Linux using the ssh command's `-D`
