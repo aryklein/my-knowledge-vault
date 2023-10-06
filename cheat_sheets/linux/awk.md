@@ -1,3 +1,9 @@
+---
+tags:
+  - linux
+  - cheatsheet
+---
+
 # AWK
 
 `AWK` is a versatile programming language for working with data files,
