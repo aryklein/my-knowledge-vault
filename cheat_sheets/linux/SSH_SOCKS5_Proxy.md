@@ -33,5 +33,5 @@ Now, you can configure your browser to use this proxy server by executing with
 the `--proxy-server` argument:
 
 ```bash
-chromium --proxy-server="socks5://localhost:8080"
+chromium --proxy-server='socks5://localhost:8080'
 ```
