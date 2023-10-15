@@ -1,7 +1,6 @@
 ---
 tags: linux, archlinux, virtualization
 ---
-
 # Manage virtual machines with virt-manager
 
 Virt-manager is a desktop user interface designed to manage virtual machines using libvirt, with a primary focus on KVM VMs. This guide will provide step-by-step instructions for installing and configuring virt-manager on Arch Linux.
