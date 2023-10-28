@@ -4,7 +4,6 @@ tags:
   - vagrant
   - linux
 ---
-
 # Vagrant with QEMU/KVM
 
 QEMU/KVM  is the default full virtualization system used in GNU/Linux systems.
@@ -194,3 +193,10 @@ Vagrant.configure("2") do |config|
     end
   end
 ```
+
+Vagrant will generate an inventory file encompassing all of the virtual machines
+it manages, and use it for provisioning machines.
+
+Note that the generated inventory file is stored as part of your local Vagrant
+environment in
+`.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory`
