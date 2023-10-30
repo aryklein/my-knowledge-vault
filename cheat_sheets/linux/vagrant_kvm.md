@@ -41,7 +41,7 @@ Provider plugin](https://github.com/vagrant-libvirt/vagrant-libvirt)
 
 ## Vagrant
 
-Once you have [[[[virt-manager]]], you can install Vagrant. In Arch Linux:
+Once you have [[virt-manager]], you can install Vagrant. In Arch Linux:
 
 ```bash
 sudo pacman -S vagrant
@@ -197,6 +197,6 @@ Vagrant.configure("2") do |config|
 Vagrant will generate an inventory file encompassing all of the virtual machines
 it manages, and use it for provisioning machines.
 
-Note that the generated inventory file is stored as part of your local Vagrant
+**Note** that the generated inventory file is stored as part of your local Vagrant
 environment in
 `.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory`

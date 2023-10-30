@@ -617,3 +617,18 @@ account    include      system-local-login
 session    include      system-local-login
 session    optional     pam_gnome_keyring.so auto_start
 ```
+
+## Additional Linux configuration steps
+
+Creating Symbolic Links for Neovim:
+
+```bash
+cd /usr/bin
+sudo ln -s nvim vim
+sudo ln -s nvim vi
+```
+
+If you want the `TERMINFO` env setting to be carried into `sudo` add the following file `/etc/sudoers.d/kitty`:
+```bash
+Default env_keep += "TERMINFO"`
+```
