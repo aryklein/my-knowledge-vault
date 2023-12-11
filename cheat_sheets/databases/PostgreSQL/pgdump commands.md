@@ -3,7 +3,6 @@ tags:
   - postgresql
   - database
 ---
-
 # Dump and Restore
 
 The subsequent guide details the steps for exporting a database from one
@@ -52,4 +51,37 @@ for table in `psql -U postgres -d ${DB} -tc "select tablename from pg_tables
 where schemaname = '${SCHEMA}';"`; \
 do psql -d ${DB} -c "alter table ${SCHEMA}.${table} owner to ${OWNER};"; done
 psql -U postgres -d ${DB} -c "ALTER DATABASE ${DB} OWNER TO ${OWNER};"
+```
+
+## Tip
+
+To selectively exclude data from certain tables during a dump, use the following
+flags:
+```
+--exclude-table-data table1 --exclude-table-data table2
+```
+
+
+If you wish to dump only the data from specific tables, you can achieve this
+with:
+```
+--data-only -t table1 -t table2
+```
+
+For example:
+```bash
+pg_dump -v -h <src_postgres> -p 5432 --exclude-table-data table1
+--exclude-table-data table2 -U postgres <db_to_migrate> | psql -U postgres
+<db_to_migrate>
+```
+
+This command will export the schema of all tables but will exclude the data from
+`table1` and `table2`. This approach is particularly useful during migrations
+when you need to replicate the table structure (schema) without transferring the
+actual data.
+
+Finally the data can be migrated with:
+```bash
+pg_dump -v -h <src_postgres> -p 5432 --data-only -t table1 -t table2 -U postgres
+<db_to_migrate> | psql -U postgres <db_to_migrate>
 ```
