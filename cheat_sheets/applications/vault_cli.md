@@ -2,7 +2,6 @@
 tags: hashicorp, vault, cheatsheet
 last_updated: 20230525
 ---
-
 # Hashicorp Vault CLI cheat sheet
 
 This document will focus on providing a reference for commands
