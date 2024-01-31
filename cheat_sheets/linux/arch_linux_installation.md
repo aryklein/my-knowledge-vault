@@ -1,7 +1,6 @@
 ---
 tags: linux, archlinux
 ---
-
 # Arch Linux installation process
 
 This guide outlines the typical installation process, package selections, and
