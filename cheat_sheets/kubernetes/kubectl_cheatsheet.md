@@ -1,7 +1,6 @@
 ---
 tags: kuberentes, kubectl, cheatsheet
 ---
-
 # kubectl cheat sheet
 
 Personal reference guide that provides a memo of commonly used commands and
