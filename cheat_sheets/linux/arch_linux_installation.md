@@ -500,7 +500,8 @@ doas pacman -S hyprland \
     kubectl \
     helmfile \
     transmission-gtk \
-    audacity
+    audacity \
+    xdg-desktop-portal-gtk
 ```
 
 To manage screen brightness, please add your user to the video group:
@@ -538,7 +539,8 @@ paru -S visual-studio-code-bin \
     wob \
     helm-diff \
     appimagelauncher \
-    zsa-wally-bin
+    hyprpicker
+    
 ```
 
 ## Hardware video acceleration
