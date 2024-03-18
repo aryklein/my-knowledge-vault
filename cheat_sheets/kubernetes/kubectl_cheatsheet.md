@@ -26,8 +26,8 @@ kubectl scale deployment <deployment-name> --replicas=<desired-replica-count>
 
 ## Restart a deployment
 
-The following command terminates the existing pods and creates new ones in
-their place:
+This method gradually replaces the old pods with new ones, ensuring that your application
+remains available during the process
 
 ```sh
 kubectl rollout restart deployment <deployment-name>
