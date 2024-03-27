@@ -52,3 +52,26 @@ Latest checkpoint's REDO WAL file:    0000000100000002000000B7
    `0000000100000002000000B7`, the file pertains to the specified REDO location.
    This file and subsequent ones contain all the necessary information to
    recover the database to a consistent and up-to-date state
+
+## PostgreSQL settings embedded within WAL files
+
+PostgreSQL knows about critical settings from the primary because this
+information is embedded within the Write-Ahead Logging (WAL) data. When
+PostgreSQL performs operations, it records changes in WAL files to ensure data
+durability and consistency. For certain settings critical to replication and
+recovery operations, PostgreSQL includes the value of these settings in the WAL
+files. This is done to ensure that when a recovery or replication is performed,
+the recovering or replica server can validate its environment against the
+requirements of the primary server's workload that generated the WALs.
+
+When you attempt to recover or start a replica, PostgreSQL processes the WAL
+files. If it encounters a setting that is critical for the operation and finds
+that the current server's configuration does not meet the minimum requirements
+as recorded in the WAL, it will halt recovery and issue an error message like
+the one you've seen. This mechanism helps prevent scenarios where the replica or
+recovering server might not be able to handle the workload or process the WAL
+files correctly due to insufficient resources.
+
+If you've lost your `postgresql.conf` file and need to recover PostgreSQL server
+parameters, especially when dealing with a situation like WAL file recovery
+where specific settings are expected, you can use `pg_controldata`
