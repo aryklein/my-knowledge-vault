@@ -1,3 +1,8 @@
+---
+tags:
+  - postgresql
+---
+
 # PITR (Point In Time Recovery)
 
 ## Basics Concepts
