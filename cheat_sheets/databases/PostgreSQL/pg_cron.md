@@ -72,3 +72,7 @@ To delete a job:
 \c my_database
 SELECT cron.unschedule('ScheduleName');
 ```
+or
+```SQL
+SELECT cron.unschedule(<id>);
+```
