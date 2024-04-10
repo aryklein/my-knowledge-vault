@@ -444,8 +444,9 @@ doas pacman -S hyprland \
     khal \
     polkit-gnome \
     pavucontrol \
-    swaylock \
+    hyprlock \
     light \
+    brightnessctl \
     alacritty \
     grim \
     slurp \
@@ -455,7 +456,7 @@ doas pacman -S hyprland \
     qt5-wayland \
     qt6-wayland \
     lm_sensors \
-    swayidle \
+    hypridle \
     swaybg \
     mako \
     flameshot \
