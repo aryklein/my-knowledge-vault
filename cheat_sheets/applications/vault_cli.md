@@ -1,6 +1,9 @@
 ---
-tags: hashicorp, vault, cheatsheet
-last_updated: 20230525
+tags:
+  - hashicorp
+  - vault
+  - cheatsheet
+last_updated: 20240423
 ---
 # Hashicorp Vault CLI cheat sheet
 
