@@ -44,6 +44,18 @@ with:
 vault kv get -field=password secret/path/my_secret
 ```
 
+## Write a secret
+
+Use the `vault kv put` command to write a secret to the vault:
+
+```bash
+vault kv put secret/path foo=bar bar=foo
+```
+
+## Delete a secret
+
+If you want to remove the secret:
+
 ## Duplicate a secret from one path to another
 
 The CLI doesn't offer a built-in way to directly duplicate a secret from one
