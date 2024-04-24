@@ -32,3 +32,20 @@ Acquiring state lock. This may take a few moments...
 ```bash
 terraform force-unlock -force <ID>
 ```
+
+## Listing All Resources (Targets)
+
+If you want to see a list of all resources (potential targets) managed by
+Terraform within
+your configuration, you can use the `terraform state list` command. This command
+displays all the resources that Terraform is currently managing:
+
+```bash
+terraform state list
+```
+
+Then you can only modify this resource by:
+
+```bash
+terraform apply -target=aws_instance.my_instance
+```
