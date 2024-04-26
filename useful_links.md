@@ -27,3 +27,8 @@ gain a better understanding of various topics.
 ## 3D Printer
 
 - [Ender 3 V2 Neo Assembly & Tutorial Video](https://www.youtube.com/watch?v=dErZygToGsw)
+
+## Android software upgrade
+
+- [Flashing tool](https://flash.android.com/welcome)
+- [Full OTA Images for Nexus and Pixel Devices](https://developers.google.com/android/ota)
