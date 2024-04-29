@@ -145,6 +145,12 @@ emptyDir volumes. It acknowledges that you are okay with deleting the data in
 emptyDir volumes. Be cautious with this flag, as it results in data loss for
 those volumes.
 
+## Delete Jobs that are marked as completed
+
+To delete Jobs that are marked as completed:
+```bash
+kubectl delete jobs --field-selector=status.successful=1
+```
 ## List of some common resource types and their short names
 
 Short Name | Long Name
