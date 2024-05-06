@@ -1,5 +1,8 @@
 ---
-tags: kuberentes, kubectl, cheatsheet
+tags:
+  - kubectl
+  - cheatsheet
+  - kubernetes
 ---
 # kubectl cheat sheet
 

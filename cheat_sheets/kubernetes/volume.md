@@ -1,7 +1,7 @@
 ---
 tags:
-  - kuberentes
   - wip
+  - kubernetes
 last_updated: 20240423
 ---
 
