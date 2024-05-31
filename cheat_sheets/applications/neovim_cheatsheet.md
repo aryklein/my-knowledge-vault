@@ -65,3 +65,9 @@ Without using a visual selection, `gU<motion>` will make the characters in
 motion uppercase, or use `gu<motion>` for lowercase.
 
 For more details, check this table [[neovim_case_commands]]
+
+## Commenting
+
+`gc{motion}`: comment or uncomment lines covered by `{motion}`.
+`gcc`: comment or uncomment `[count]` lines starting at cursor.
+`{Visual}gc`: comment or uncomment the selected line(s).

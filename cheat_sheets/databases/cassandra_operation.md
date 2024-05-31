@@ -20,7 +20,13 @@ nodetool status
 cqlsh
 ```
 
-- **Create keyspace**
+- List all keyspaces:
+
+```cql
+DESCRIBE KEYSPACES;
+```
+
+- **Create a keyspace**
 
 To create a keyspace with `SimpleStrategy` and replication factor 3:
 
@@ -172,8 +178,7 @@ datacenter, one by one. This process needs to be performed carefully to maintain
 data consistency and avoid data loss. Here's the high-level process:
 
 1. **Prepare the cluster**: Prior to starting the decommissioning process,
-ensure all nodes in your cluster are up and running. You can use the `nodetool
-status` command to check the status of the nodes.
+ensure all nodes in your cluster are up and running. You can use the` nodetool status `command to check the status of the nodes.
 2. **Decommission nodes**: For each node in the datacenter you want to
 decommission:
    -  Use the `nodetool drain` command to flush all memtables from the node to
