@@ -471,8 +471,10 @@ doas pacman -S hyprland \
     ttf-roboto \
     ttf-roboto-mono \
     ttf-hack-nerd \
-    ttf-noto-nerd \
-    ttf-dejavu-nerd
+    ttf-jetbrains-mono \
+    ttf-nerd-fonts-symbols \
+    ttf-nerd-fonts-symbols-common \
+    ttf-nerd-fonts-symbols-mono \
     noto-fonts \
     noto-fonts-emoji \
     libreoffice-still \
