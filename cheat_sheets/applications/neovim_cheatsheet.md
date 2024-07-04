@@ -1,7 +1,6 @@
 ---
 tags: neovim, cheatsheet
 ---
-
 # Neovim cheat sheet
 
 As a Neovim user, this document will focus on providing a reference for commands

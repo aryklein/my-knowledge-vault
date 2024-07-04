@@ -506,7 +506,8 @@ doas pacman -S hyprland \
     transmission-gtk \
     audacity \
     xdg-desktop-portal-gtk \
-    hyprpaper
+    hyprpaper \
+    hyprwayland-scanner
 ```
 
 To manage screen brightness, please add your user to the video group:
