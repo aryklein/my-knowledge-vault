@@ -286,6 +286,7 @@ pacman -S intel-ucode \
     zsh-completions \
     zsh-autosuggestions \
     zsh-syntax-highlighting \
+    zsh-history-substring-search \
     colordiff \
     python-virtualenv \
     python-pip \
