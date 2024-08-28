@@ -92,3 +92,17 @@ FROM pg_stat_activity WHERE -- don't kill my own connection!
     -- don't kill the connections to other databases
     AND datname = 'database_name';
 ```
+
+## Streaming replication status
+
+To check the replication status you can use the following SQL query in the primary:
+
+```sql
+select * from pg_stat_replication;
+```
+
+In the replica:
+
+```sql
+select * from pg_stat_wal_receiver;
+```

@@ -20,7 +20,7 @@ tags:
   needed for recovery in case of a crash because the system only needs to replay
   WAL records after the last checkpoint.
 
-For example, by running pg_controldata you can see the following infromation:
+For example, by running pg_controldata you can see the following information:
 
 ```bash
 /usr/lib/postgresql/14/bin/pg_controldata -D /var/lib/postgresql/data/
