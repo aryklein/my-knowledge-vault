@@ -82,3 +82,38 @@ can use:
 ```bash
 git rev-list --count HEAD
 ```
+
+
+## Squash all commits in a Git repository into one single commit
+
+This method will squash all commits into one while preserving the changes made
+in those commits.
+### 1. Reset the branch to the first commit:
+
+Use the following command to interactively rebase your branch starting from the
+first commit:
+
+```
+git reset --soft $(git rev-list --max-parents=0 HEAD)
+```
+
+This command does a "soft" reset, which keeps the changes in the working
+directory but clears the commit history.
+
+### 2. Create a new commit:
+
+Once the branch is reset to the first commit, all the changes will be staged.
+You can now create a new commit with all the changes:
+
+```bash
+git commit -m "Your new commit message"
+```
+
+### 3. Force push the new commit (if pushing to a remote):
+
+If this is a branch you are pushing to a remote repository (e.g., origin), you
+will need to force push to overwrite the history
+
+```bash
+git push --force
+```
