@@ -1,7 +1,6 @@
 ---
 tags: linux, archlinux
 ---
-
 # How to submit a PKGBUILD to the AUR
 
 This document provides instructions on creating and sharing a PKGBUILD script

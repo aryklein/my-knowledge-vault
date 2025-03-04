@@ -92,3 +92,9 @@ helm lint [chart-path]
 ```bash
 helm package [chart-path]
 ```
+
+## How to get the values.yaml file
+
+```
+helm show values <repo>/<chart> > values.yaml
+```
