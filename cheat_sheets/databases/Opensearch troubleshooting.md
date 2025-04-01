@@ -1,2 +1,0 @@
-# Opensearch basic troubleshooting
-
