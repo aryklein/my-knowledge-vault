@@ -106,3 +106,8 @@ In the replica:
 ```sql
 select * from pg_stat_wal_receiver;
 ```
+
+## Viewing configuration settings and their sources
+```sql
+SELECT name, setting, source, sourcefile FROM pg_settings;
+```

@@ -48,10 +48,14 @@ curl -X GET "https://user:password@example-opensearch.example.org:9200/_cluster/
 ```
 
 Common reasons for unassigned shards:
+
 - `ALLOCATION_FAILED`: Could not allocate due to disk space, node filtering, etc.
 - `NODE_LEFT`: A node containing the shard left the cluster
 - `CLUSTER_RECOVERED`: Shards recovering after cluster restart
 - `INDEX_CREATED`: New index shards being allocated
+- `THROTTLE:` Shard allocation is temporarily paused to avoid overloading nodes. This usually happens when a node reaches the limit of concurrent shard recoveries (either incoming or outgoing). This is managed by the following cluster settings: 
+	- `cluster.routing.allocation.node_concurrent_outgoing_recoveries`
+	- `node_concurrent_incoming_recoveries`, or `node_concurrent_recoveries`
 
 ## Resolving Allocation Issues
 
