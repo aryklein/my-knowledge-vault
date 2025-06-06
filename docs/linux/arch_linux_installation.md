@@ -272,7 +272,8 @@ pacman -S intel-ucode \
     linux-firmware \
     bash-completion \
     neovim \
-    gopls \
+    tree-sitter \
+    tree-sitter-cli \
     man-db \
     man-pages \
     base-devel \
