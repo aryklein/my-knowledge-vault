@@ -295,6 +295,7 @@ pacman -S intel-ucode \
     docker \
     docker-compose \
     cups \
+    ghostscript \
     ntfs-3g \
     fzf \
     fd \
