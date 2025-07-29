@@ -509,7 +509,8 @@ doas pacman -S hyprland \
     audacity \
     xdg-desktop-portal-gtk \
     hyprpaper \
-    hyprwayland-scanner
+    hyprwayland-scanner \
+    obsidian
 ```
 
 To manage screen brightness, please add your user to the video group:
@@ -640,4 +641,13 @@ sudo ln -s nvim vi
 If you want the `TERMINFO` env setting to be carried into `sudo` add the following file `/etc/sudoers.d/kitty`:
 ```bash
 Default env_keep += "TERMINFO"`
+```
+
+## Tools that I use for working
+
+```bash
+sudo pacman -S \
+  vault
+  go-task
+  
 ```
