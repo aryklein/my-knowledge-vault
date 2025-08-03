@@ -485,6 +485,7 @@ doas pacman -S hyprland \
     hunspell-en_US \
     firefox \
     kubectl \
+    k9s \
     gimp \
     obs-studio \
     yt-dlp \
@@ -504,14 +505,15 @@ doas pacman -S hyprland \
     gnome-themes-extra \
     aws-cli-v2 \
     swappy \
-    kubectl \
+    vault \
     helmfile \
     transmission-gtk \
     audacity \
     xdg-desktop-portal-gtk \
     hyprpaper \
     hyprwayland-scanner \
-    obsidian
+    obsidian \
+    go-task
 ```
 
 To manage screen brightness, please add your user to the video group:

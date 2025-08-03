@@ -1,7 +1,8 @@
 ---
-tags: linux, archlinux
+tags:
+  - linux
+  - archlinux
 ---
-
 # How to set up a Yubikey in Arch Linux
 
 Yubikey is a hardware authentication device that can be used for two-factor
@@ -31,5 +32,5 @@ To manage your Yubikey, you need to install the Yubikey management tools. Use
 the following command to install the tools:
 
 ```bash
-sudo pacman -S yubikey-manager yubikey-manager-qt
+sudo pacman -S yubikey-manager
 ```
