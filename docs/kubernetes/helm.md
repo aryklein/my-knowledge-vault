@@ -30,12 +30,17 @@ helm repo remove [repo-name]
 
 **Search for charts in the repo:**
 ```bash
-helm search repo [chart-name]
+helm search repo [repo-name]
 ```
 
 If you pass the option `--version`, it will show all available versions
 ```bash
-helm search repo [chart-name] --versions
+helm search repo [repo-name] --versions
+```
+
+**Download and untar a chart to your local disk:**
+```
+helm pull yugabyte/yugabyte --untar
 ```
 
 **Install a chart:**

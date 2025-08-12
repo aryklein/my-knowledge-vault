@@ -513,7 +513,8 @@ doas pacman -S hyprland \
     hyprpaper \
     hyprwayland-scanner \
     obsidian \
-    go-task
+    go-task \
+    helm
 ```
 
 To manage screen brightness, please add your user to the video group:
