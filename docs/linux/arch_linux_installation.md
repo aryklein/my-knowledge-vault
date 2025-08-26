@@ -514,7 +514,8 @@ doas pacman -S hyprland \
     hyprwayland-scanner \
     obsidian \
     go-task \
-    helm
+    helm \
+    unzip
 ```
 
 To manage screen brightness, please add your user to the video group:
