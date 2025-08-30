@@ -515,6 +515,7 @@ doas pacman -S hyprland \
     obsidian \
     go-task \
     helm \
+    kustomize \
     unzip
 ```
 
