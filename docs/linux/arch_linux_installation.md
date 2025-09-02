@@ -319,7 +319,8 @@ pacman -S intel-ucode \
     nmap \
     freerdp \
     util-linux \
-    tree
+    tree \
+    pacman-contrib
 ```
 
 ### Mirror List
