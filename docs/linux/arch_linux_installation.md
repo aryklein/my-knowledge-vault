@@ -659,3 +659,27 @@ sudo pacman -S \
   go-task
   
 ```
+
+## Time issues with Dual Boot Windows 
+
+This happens because Windows and Linux handle the hardware clock (RTC) differently by default:
+
+### How clocks are stored
+
+Linux assumes the hardware clock is set to UTC (Coordinated Universal Time). When it boots, it applies your system’s timezone settings to show the correct local time.
+
+Windows assumes the hardware clock is set to local time. It reads the RTC directly and doesn’t adjust for timezone, so if Linux already set the clock to UTC, Windows interprets it incorrectly - usually shifting by a few hours.
+
+### Fix: Make Windows use UTC (recommended)
+
+Open the Registry Editor in Windows (regedit) and navigate to:
+
+```
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
+```
+
+Create a new `DWORD` (32-bit) value called `RealTimeIsUniversal`and set its value to `1`.
+
+Reboot.
+
+Now Windows will treat the hardware clock as UTC, matching Linux.
