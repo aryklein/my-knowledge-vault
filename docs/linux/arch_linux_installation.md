@@ -320,7 +320,8 @@ pacman -S intel-ucode \
     freerdp \
     util-linux \
     tree \
-    pacman-contrib
+    pacman-contrib \
+    inetutils
 ```
 
 ### Mirror List
