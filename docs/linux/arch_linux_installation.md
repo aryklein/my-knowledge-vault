@@ -518,7 +518,8 @@ doas pacman -S hyprland \
     go-task \
     helm \
     kustomize \
-    unzip
+    unzip \
+    acpid
 ```
 
 To manage screen brightness, please add your user to the video group:
@@ -557,7 +558,7 @@ paru -S visual-studio-code-bin \
     helm-diff \
     appimagelauncher \
     hyprpicker
-    
+
 ```
 
 ## Hardware video acceleration
@@ -646,7 +647,9 @@ sudo ln -s nvim vim
 sudo ln -s nvim vi
 ```
 
-If you want the `TERMINFO` env setting to be carried into `sudo` add the following file `/etc/sudoers.d/kitty`:
+If you want the `TERMINFO` env setting to be carried into `sudo` add the
+following file `/etc/sudoers.d/kitty`:
+
 ```bash
 Default env_keep += "TERMINFO"`
 ```
@@ -657,18 +660,23 @@ Default env_keep += "TERMINFO"`
 sudo pacman -S \
   vault
   go-task
-  
+
 ```
 
-## Time issues with Dual Boot Windows 
+## Time issues with Dual Boot Windows
 
-This happens because Windows and Linux handle the hardware clock (RTC) differently by default:
+This happens because Windows and Linux handle the hardware clock (RTC)
+differently by default:
 
 ### How clocks are stored
 
-Linux assumes the hardware clock is set to UTC (Coordinated Universal Time). When it boots, it applies your system’s timezone settings to show the correct local time.
+Linux assumes the hardware clock is set to UTC (Coordinated Universal Time).
+When it boots, it applies your system’s timezone settings to show the correct
+local time.
 
-Windows assumes the hardware clock is set to local time. It reads the RTC directly and doesn’t adjust for timezone, so if Linux already set the clock to UTC, Windows interprets it incorrectly - usually shifting by a few hours.
+Windows assumes the hardware clock is set to local time. It reads the RTC
+directly and doesn’t adjust for timezone, so if Linux already set the clock to
+UTC, Windows interprets it incorrectly - usually shifting by a few hours.
 
 ### Fix: Make Windows use UTC (recommended)
 
@@ -678,8 +686,81 @@ Open the Registry Editor in Windows (regedit) and navigate to:
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
 ```
 
-Create a new `DWORD` (32-bit) value called `RealTimeIsUniversal`and set its value to `1`.
+Create a new `DWORD` (32-bit) value called `RealTimeIsUniversal`and set its
+value to `1`.
 
 Reboot.
 
 Now Windows will treat the hardware clock as UTC, matching Linux.
+
+## Disable Watchdog
+
+### What a Watchdog Is
+
+A watchdog timer is a hardware or software mechanism designed to automatically
+reset the system if it stops responding.
+
+In Linux, the kernel exposes watchdog devices `(/dev/watchdog`), and daemons
+like systemd or wd_keepalive periodically "kick" them to show the system is
+healthy.
+
+### How to Check if It's Enabled
+
+```bash
+lsmod | grep wdt
+```
+
+### Disable Watchdog
+
+It’s safe to disable if you are in a desktop/laptop for personal use
+
+```bash
+lsmod | grep wdg
+```
+
+If it's Intel, it wiil be `iTCO-wdt`, if AMD `sp5100_tco` :
+
+```bash
+echo "blacklist iTCO_wdt" | sudo tee /etc/modprobe.d/blacklist-watchdog.conf
+```
+
+## Laptop Brightness
+
+`acpid` package should be installed and then enable and start the service:
+
+```bash
+sudo systemctl enable acpid.service
+sudo systemctl start acpid.service
+```
+sudo systemctl enable acpid.service
+
+Create the following files:
+
+**/etc/acpi/events/brightness-down**:
+```bash
+event=video/brightnessdown
+action=/etc/acpi/brightness.sh down
+```
+
+**/etc/acpi/events/brightness-up**:
+```bash
+event=video/brightnessup
+action=/etc/acpi/brightness.sh up
+```
+
+**/etc/acpi/brightness.sh**:
+```bash
+#!/bin/sh
+STEP="5%"
+case "$1" in
+  up)   /usr/bin/brightnessctl set "${STEP}+" ;;
+  down) /usr/bin/brightnessctl set "${STEP}-" ;;
+esac
+```
+
+Finally:
+
+```bash
+sudo chmod +x /etc/acpi/brightness.sh
+sudo systemctl restart acpid.service
+```
