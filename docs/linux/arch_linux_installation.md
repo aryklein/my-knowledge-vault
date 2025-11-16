@@ -519,7 +519,8 @@ doas pacman -S hyprland \
     helm \
     kustomize \
     unzip \
-    acpid
+    acpid \
+    cliphist
 ```
 
 To manage screen brightness, please add your user to the video group:
