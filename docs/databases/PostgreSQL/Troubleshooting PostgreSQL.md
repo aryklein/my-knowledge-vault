@@ -111,3 +111,16 @@ select * from pg_stat_wal_receiver;
 ```sql
 SELECT name, setting, source, sourcefile FROM pg_settings;
 ```
+
+## Counting connections by user, database, and state
+
+```sql
+SELECT 
+    usename AS user,
+    datname AS database,
+    state,
+    count(*) AS connections
+FROM pg_stat_activity
+GROUP BY usename, datname, state
+ORDER BY connections DESC;
+```
