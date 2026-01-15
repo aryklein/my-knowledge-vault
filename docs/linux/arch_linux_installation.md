@@ -444,7 +444,7 @@ Install the following non-AUR packages:
 doas pacman -S hyprland \
     fuzzel \
     waybar \
-    blueberry \
+    blueman \
     xdg-desktop-portal \
     xdg-desktop-portal-hyprland \
     khal \
