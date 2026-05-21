@@ -324,6 +324,39 @@ pacman -S intel-ucode \
     inetutils
 ```
 
+### Language Server Protocol packages
+
+Install common LSP servers used by editors and tools such as Neovim and
+OpenCode:
+
+```bash
+pacman -S bash-language-server \
+    lua-language-server \
+    yaml-language-server \
+    marksman \
+    gopls \
+    pyright \
+    typescript-language-server \
+    eslint-language-server \
+    biome \
+    dockerfile-language-server \
+    rust-analyzer \
+    clang
+```
+
+- `bash-language-server`: Bash and shell scripts.
+- `lua-language-server`: Lua, especially Neovim configuration.
+- `yaml-language-server`: YAML files, Kubernetes manifests, CI files, and Ansible-style YAML.
+- `marksman`: Markdown notes and documentation.
+- `gopls`: Go.
+- `pyright`: Python type checking and language features.
+- `typescript-language-server`: TypeScript and JavaScript.
+- `eslint-language-server`: ESLint diagnostics for TypeScript and JavaScript projects.
+- `biome`: JavaScript, TypeScript, JSON, and CSS linting/formatting.
+- `dockerfile-language-server`: Dockerfiles.
+- `rust-analyzer`: Rust.
+- `clang`: Provides `clangd` for C and C++.
+
 ### Mirror List
 
 Generate a reliable mirror list file (`/etc/pacman.d/mirrorlist`) using the
